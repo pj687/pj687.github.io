@@ -1,0 +1,215 @@
+* {
+	/* 初始化 取消页面的内外边距 */
+	padding: 0;
+	margin: 0;
+	
+}
+@keyframes ds{
+	25%{
+		transform: translate(1050px,0);
+	}
+	50%{
+		transform: translate(1050px,610px);
+	}
+	75%{
+		transform: translate(0,610px);
+	}
+	100%{
+		transform: rotateY(360deg);
+		
+	}
+}
+
+section {
+	/* 相对定位 */
+	position: relative;
+	width: 150px;
+	height: 150px;
+	/* 让子元素保留其3D位置 */
+	transform-style: preserve-3d;
+	/* 动画 名称 时长 linear 是匀速运动 infinite是无限次播放 */
+	animation: rotate 5s linear infinite;
+}
+section div {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	transition: all 1s;
+}
+section div img {
+	width: 100%;
+	height: 100%;
+}
+section div:nth-child(1) {
+	transform: translateZ(75px);
+}
+section:hover div:nth-child(1) {
+	transform: translateZ(200px);
+}
+section div:nth-child(2) {
+	transform: rotateX(-180deg) translateZ(75px);
+}
+section:hover div:nth-child(2) {
+	transform: rotateX(-180deg) translateZ(200px);
+}
+section div:nth-child(3) {
+	transform: rotateX(90deg) translateZ(75px);
+}
+section:hover div:nth-child(3) {
+	transform: rotateX(90deg) translateZ(200px);
+}
+section div:nth-child(4) {
+	transform: rotateX(-90deg) translateZ(75px);
+}
+section:hover div:nth-child(4) {
+	transform: rotateX(-90deg) translateZ(200px);
+}
+section div:nth-child(5) {
+	transform: rotateY(90deg) translateZ(75px);
+}
+section:hover div:nth-child(5) {
+	transform: rotateY(90deg) translateZ(200px);
+}
+section div:nth-child(6) {
+	transform: rotateY(-90deg) translateZ(75px);
+}
+section:hover div:nth-child(6) {
+	transform: rotateY(-90deg) translateZ(200px);
+}
+section div:nth-child(7) {
+	transform: translateZ(75px);
+}
+section div:nth-child(8) {
+	transform: rotateX(-180deg) translateZ(75px);
+}
+section div:nth-child(9) {
+	transform: rotateX(90deg) translateZ(75px);
+}
+section div:nth-child(10) {
+	transform: rotateX(-90deg) translateZ(75px);
+}
+section div:nth-child(11) {
+	transform: rotateY(90deg) translateZ(75px);
+}
+section div:nth-child(12) {
+	transform: rotateY(-90deg) translateZ(75px);
+}
+
+@keyframes rotate {
+	0% {
+		transform: rotateY(0) rotateX(0);
+	}
+	100% {
+		transform: rotateY(360deg) rotateX(360deg);
+	}
+}
+
+.com1{
+	margin: auto;
+	width: 1100px;
+	height: 660px;
+	display: flex;
+	/* justify-content: center;
+	align-items: center; */
+	/* 让页面始终占浏览器总高 */
+	background-color: #def8ea;
+	/* 视距 增加盒子的立体感 */
+	/* perspective: 1000px; */
+	 border: 3px solid #d3ebde;
+}
+.cons{
+	margin-top: 280px;
+	margin-left: 430px;
+}
+h2{
+	padding: 2px 18px;
+	position: absolute;
+	margin-top: 58px;
+	margin-left: 440px;
+	letter-spacing: 5px;
+	border-radius: 12px;
+	text-align: center;
+	font-size: 35px;
+}
+.ilogo{
+	position: relative;
+	float: left;
+	left: 0rem;
+	width: 50px;
+	height: 50px;
+	animation: ds 15s linear 10;
+}
+
+div.fram6 {
+	width: 100%;
+	height: 300px;
+	border: 2px solid #feff95;
+	background: linear-gradient(to bottom, #e9f7f6, #cfffff);
+	background-position: bottom;
+}
+
+div.fram6 div:nth-child(2) {
+	float: left;
+}
+
+div.fram6 div {
+	height: 5px;
+	width: 1400px;
+	margin: auto;
+	margin-top: 75px;
+	background-color: #7c9994;
+}
+
+div.fram6 p:first-child {
+	font-size: 30px;
+	margin-left: 100px;
+	margin-top: 20px;
+	float: left;
+}
+
+div.fram6 h3 {
+	font-size: 18px;
+	color: #176d7a;
+	margin-left: 80px;
+	margin-top: 15px;
+}
+
+div.fram6 a i {
+	color: #176d7a;
+	margin-left: 10px;
+	float: left;
+	margin-top: 28px;
+	font-size: 32px;
+	margin-right: 30px;
+}
+
+div.fram6 a i:hover {
+	color: #ffa81c;
+}
+
+div.fram6>p {
+	margin-top: -20px;
+	margin-left: 200px;
+}
+
+div.fram6>p>a {
+	color: #3d3d3d;
+	font-size: 17px;
+}
+
+div.fram6 img {
+	width: 70px;
+	height: 70px;
+	margin-top: 5px;
+	margin-left: 30px;
+	animation: footer 6s infinite;
+}
+
+@keyframes footer {
+	100% {
+		transform: translateX(1600px);
+	}
+}

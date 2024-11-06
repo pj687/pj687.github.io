@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- 时间绑定  1通过HTML标签事件绑定   2用dom元素绑定 -->
+		<input type="button" id="b1" value="事件1" onclick="on()"/>
+		<input type="button" id="b2" value="事件2" onclick="on()"/>
+	</body>
+	
+	<script>
+		function on(){
+			alert("事件1被点击了");
+		}
+		document.getElementById('b2').onclick=function(){
+			alert("事件2被点击");
+		}
+	</script>
+</html>

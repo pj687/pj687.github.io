@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>浮动广告</title>
+		<style>
+			#ad {
+				position: absolute;
+				width: 160px;
+				height: 90px;
+				z-index: 1000;
+				cursor: pointer;
+				left: 120px;
+				top: 120px;
+			}
+
+			#ad>div.right {
+				position: absolute;
+				left: 91px;
+				bottom: 73px;
+				width: 45px;
+				line-height: 15px;
+				text-align: right;
+				border: 2px solid #aaffff;
+				color: rebeccapurple;
+			}
+			img{
+				border-radius: 50%;
+			}
+		</style>
+		<script>
+			var adIntervalID = 1;
+			var stepX = 5;stepY = 5;
+			function floadAd() {
+				var ad = document.getElementById("ad");
+				var adW = 160;
+				var adH = 90;
+				var w = window.innerWidth;
+				var h = window.innerHeight;
+				if ((ad.offsetLeft + adW + stepX) > w || (ad.offsetLeft + stepX) < 0) {
+					stepX = -stepX;
+				}
+				if ((ad.offsetTop + adH + stepY) > h || (ad.offsetTop + stepY) < 0) {
+					stepY = -stepY;
+				}
+				var goX = ad.offsetLeft + stepX;
+				ad.style.left = goX + "px";
+				var goY = ad.offsetTop + stepY;
+				ad.style.top = goY + "px";
+			}
+			window.onload = function() {
+				adIntervalID = setInterval(floadAd, 100);
+			}
+
+			function stopAd() {
+				clearInterval(adIntervalID);
+			}
+
+			function startAd() {
+				adIntervalID = setInterval(floadAd, 100);
+			}
+		</script>
+	</head>
+	<body>
+		<div id="ad" onmouseover="stopAd()" onmouseout="startAd()">
+		<img src="img/飘动1.jpg"/>
+		<div class="right" onclick="this.parentNode.style.display='none'">关闭X</div>
+		</div>
+	</body>
+</html>

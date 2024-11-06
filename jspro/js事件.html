@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<img src="../img/鼠标跟随.png" id="img1"/>
+		<br />
+		<br/>
+		
+		<input value="换图" type="button" onclick="on()"/><br />
+		<input type="text" id="name" value="IT" onfocus="lower()" onblur="upper()"/><br />
+		<div class="clas">js</div><br />
+		<div class="clas">java</div><br />
+		<input type="checkbox" name="ho">111<input type="checkbox" name="ho">222<input type="checkbox" name="ho">333
+		<br />
+		<input type="button" value="全选" onclick="checkAll()"/>
+		<input type="button" value="反选" onclick="checkoff()"/ >
+	</body>
+	<script>
+		function on(){
+			document.getElementById("img1").src="../img/飘动1.jpg";
+			// var img=document.getElementById("img1");
+			// img.src="../img/飘动1.jpg";
+		}
+		  
+		  function lower(){
+			  var input=document.getElementById("name");
+			  input.value=input.value.toUpperCase();
+		  }
+		  
+		  function upper(){
+			var input=document.getElementById("name");
+			input.value=input.value.toLowerCase();
+		  }
+		  
+		  function checkAll(){
+			  var hos=document.getElementsByName("ho");
+			  for (let i = 0; i < hos.length; i++) {
+			  	const ele=hos[i];
+				ele.checked=true;
+			  }
+		  }
+		  
+		  function checkoff(){
+			  var hos=document.getElementsByName("ho");
+			  for (let i = 0; i < hos.length; i++) {
+			  	const ele=hos[i];
+			  	ele.checked=false; 
+			  }
+		  }
+	</script>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>(中国风景网)注册页面</title>
+		<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css" />
+		<link href="css/注册格式.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
+		<script src="js/跑马灯.js"></script>
+		<div class="shell">
+
+			<div>
+				<img src="img/注册.jpg" />
+			</div>
+			<form action="" method="post">
+				<!-- <p>欢迎您注册加入</p> -->
+				<div class="marquee marquee-vertical">
+				    <ul id="marquee-vertical" data-duration="1"></ul>
+				</div>
+				<div><a href="首页.html">
+						<p>返回首页<i class="fa fa-arrow-circle-o-left fa-2x" aria-hidden="true"></i></p>
+					</a></div>
+				<div>
+					<input type="text" placeholder="昵称" class="input" id="nipId" onfocus="nipsText()" onblur="nipText()"/>
+					<span id="nip"></span>
+				</div>
+				<script>
+					function nipsText()
+					{
+						var _nip=document.getElementById('nip');
+						_nip.innerHTML="请输入昵称";
+					}
+					function nipText()
+					{
+						var _nxp=document.getElementById("nipId").value;
+						if(_nxp.length==0)
+						    document.getElementById('nip').innerHTML="昵称不能为空";
+						if(_nxp.length>0)
+						    document.getElementById('nip').innerHTML="√";
+					}
+				</script>
+				
+				<div>
+					<input type="email" placeholder="Email" class="input" id="eipId" onfocus="eipsText()" onblur="eipText()"/>
+					<span id="eip"></span>
+				</div>
+				<script>
+					function eipsText()
+					{
+						var _nip=document.getElementById('eip');
+						_nip.innerHTML="请输入Email";
+					}
+					function eipText()
+					{
+						var _nxp=document.getElementById("eipId").value;
+						if(_nxp.length==0)
+						    document.getElementById('eip').innerHTML="不能为空";
+						if(_nxp.length>5)
+						    document.getElementById('eip').innerHTML="√";
+					}
+				</script>
+				<div class="inputm" style="z-index: 120;">
+					<input type="password" placeholder="密码" class="input" id="passId" onfocus="passText()" onblur="pasText()"/>
+					<a href="#"><i class="fa fa-eye" aria-hidden="true" id="eye"></i></a>
+					<span id="tip"></span>
+				</div>
+				<script>
+					let eye=document.getElementById("eye");
+					let password=document.getElementById("passId");
+					eye.onclick=function(){
+						if(password.type=="password"){
+							password.type="text";
+						}else{
+							password.type="password";
+						}
+					}
+				</script>
+				<script>
+					function passText()
+					{
+						var _tip=document.getElementById('tip');
+						_tip.innerHTML="请输入密码长度大于4";
+					}
+					function pasText()
+					{
+						var _txt=document.getElementById("passId").value;
+						if(_txt.length>4)
+						    document.getElementById('tip').innerHTML="√";
+						else if(_txt.length==0)
+						    document.getElementById('tip').innerHTML="密码不能为空";
+						else
+						    document.getElementById('tip').innerHTML="输入密码格式不对";
+					}
+				</script>
+				<!-- <div class="inputms">
+					<input type="password" placeholder="请再次输入密码" class="input" id="tipId" onfocus="eipsText()" onblur="tipText()"/>
+					<span id="tips"></span>
+				</div>
+				<script>
+					function tipsText()
+					{
+						var _nip=document.getElementById('tips');
+						_tip.innerHTML="请再次输入密码";
+					}
+					function tipText()
+					{
+						var _txp=document.getElementById("tipId").value;
+						if(passI)
+						    document.getElementById('tip').innerHTML="√";
+					}
+				</script> -->
+				<button class="btn" style="z-index: 120;">立即注册</button>
+				<div class="footer"  style="z-index: 120;"><a href="登录.html"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i>前往登录</a></div>
+			</form>
+			
+			<div class="clock_left">
+				<script type="text/javascript" src="js/数字时钟.js"></script>
+				<div class="container">
+					<div class="menu">
+						<div class="running"><span>开启</span></div>
+						<div class="paused"><span>暂停</span></div>
+					</div>
+					<div class="clock">
+						<div class="clock-item hour">
+							<div>时</div>
+							<span>00</span>
+						</div>
+						<div class="clock-item minute">
+							<div>分</div>
+							<span>00</span>
+						</div>
+						<div class="clock-item second">
+							<div>秒</div>
+							<span>00</span>
+						</div>
+					</div>
+				</div>
+			<div class="toast">我是提示框</div>
+			</div>
+		</div>
+	</body>
+</html>
